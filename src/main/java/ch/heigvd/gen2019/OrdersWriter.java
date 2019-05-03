@@ -30,7 +30,7 @@ public class OrdersWriter {
 
                 if (product.getSize() != null) {
                     sb.append("\"size\": \"");
-                    sb.append(product.getSizeFor());
+                    sb.append(product.getSize());
                     sb.append("\", ");
                 }
 
