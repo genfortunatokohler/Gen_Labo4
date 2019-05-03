@@ -36,19 +36,6 @@ public class Product {
         return currency;
     }
 
-    String getColorFor() {
-        switch (getColor().getValue()) {
-            case 1:
-                return "blue";
-            case 2:
-                return "red";
-            case 3:
-                return "yellow";
-            default:
-                return "no color";
-        }
-    }
-
     String getSizeFor() {
         return size.toString();
     }
