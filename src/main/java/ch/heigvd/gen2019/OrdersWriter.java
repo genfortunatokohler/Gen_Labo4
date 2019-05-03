@@ -25,7 +25,7 @@ public class OrdersWriter {
                 sb.append(product.getCode());
                 sb.append("\", ");
                 sb.append("\"color\": \"");
-                sb.append(product.getColorFor());
+                sb.append(product.getColor() != null ? product.getColor() : "no color");
                 sb.append("\", ");
 
                 if (product.getSize() != null) {
