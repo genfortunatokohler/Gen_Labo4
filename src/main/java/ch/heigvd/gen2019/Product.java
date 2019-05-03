@@ -39,4 +39,27 @@ public class Product {
     String getSizeFor() {
         return size.toString();
     }
+
+    void getProductContent(StringBuffer sb) {
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(getCode());
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(getColor() != null ? getColor() : "no color");
+        sb.append("\", ");
+
+        if (getSize() != null) {
+            sb.append("\"size\": \"");
+            sb.append(getSize());
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(getPrice());
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(getCurrency());
+        sb.append("\"}, ");
+    }
 }
