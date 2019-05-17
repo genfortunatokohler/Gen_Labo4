@@ -37,25 +37,12 @@ public class Product {
     }
 
     void getProductContent(StringBuffer sb) {
-        sb.append("{");
-        sb.append("\"code\": \"");
-        sb.append(getCode());
-        sb.append("\", ");
-        sb.append("\"color\": \"");
-        sb.append(getColor() != null ? getColor() : "no color");
-        sb.append("\", ");
+        sb.append(String.format("{\"code\": \"%s\", \"color\": \"%s\", ", code, getColor() != null ? getColor() : "no color"));
 
         if (getSize() != null) {
-            sb.append("\"size\": \"");
-            sb.append(getSize());
-            sb.append("\", ");
+            sb.append(String.format("\"size\": \"%s\", ", size));
         }
 
-        sb.append("\"price\": ");
-        sb.append(getPrice());
-        sb.append(", ");
-        sb.append("\"currency\": \"");
-        sb.append(getCurrency());
-        sb.append("\"}, ");
+        sb.append(String.format("\"price\": %s, \"currency\": \"%s\"}, ", Double.toString(price), currency));
     }
 }
