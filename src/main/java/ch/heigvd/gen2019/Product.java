@@ -36,10 +36,6 @@ public class Product {
         return currency;
     }
 
-    String getSizeFor() {
-        return size.toString();
-    }
-
     void getProductContent(StringBuffer sb) {
         sb.append("{");
         sb.append("\"code\": \"");

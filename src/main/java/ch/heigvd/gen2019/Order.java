@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Product> products = new ArrayList<Product>();
+    private List<Product> products = new ArrayList<>();
     private int id;
 
     public Order(int id) {
@@ -23,7 +23,7 @@ public class Order {
         return products.get(j);
     }
 
-    public void AddProduct(Product product) {
+    public void addProduct(Product product) {
         products.add(product);
     }
 
