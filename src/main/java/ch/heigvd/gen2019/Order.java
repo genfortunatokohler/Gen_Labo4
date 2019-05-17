@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private List<Product> products = new ArrayList<Product>();
+    private List<Product> products = new ArrayList<>();
     private int id;
 
     public Order(int id) {
@@ -23,7 +23,19 @@ public class Order {
         return products.get(j);
     }
 
-    public void AddProduct(Product product) {
+    public void addProduct(Product product) {
         products.add(product);
+    }
+
+    void getOrderContent(StringBuffer sb) {
+        sb.append(String.format("{\"id\": %d, \"products\": [", id));
+        for (int j = 0; j < getProductsCount(); j++) {
+            getProduct(j).getProductContent(sb);
+        }
+
+        if (products.size() > 0) {
+            sb.delete(sb.length() - 2, sb.length());
+        }
+        sb.append("]}, ");
     }
 }
